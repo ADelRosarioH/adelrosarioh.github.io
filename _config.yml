@@ -18,14 +18,14 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: Anthony Del Rosario
+title: Anthony Del Rosario, Senior Software Engineer
 author: Anthony Del Rosario
 email: adelrosarioh@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
   Hi! I'm Anthony Del Rosario, a Senior Software Engineer from Dominican Republic with 8+ years of professional experience 
   building awesome software applications for health care, government, telecommunications and banking industries. 
 
-  Here I share my thoughts on Software, Programming, Tools and more.
+  Here I share my thoughts on Software Development, Programming, Tools and whatever else...
 url: 'http://adelrosarioh.me/'
 
 # Config for contrast
@@ -50,16 +50,20 @@ minimal: true # use simpler style
 # Menu
 
 navigation:
-  - { title: Thoughts, file: 'index.html' }
-  - { title: About, file: 'about.html' }
-
+  - { title: 'His thoughts', file: 'index.html' }
+  - { title: 'Who is this guy?', file: 'about-him.html' }
+  - { title: 'His resume', file: 'resume.html' }
+  - { title: 'Little projects', file: 'projects.html' }
+  - { title: "What he's using", file: 'uses.html' }
+  - { title: 'Get in touch!', file: 'contact-him.html' }
+  
+  
 external: # see http://fontawesome.com/icons
-  - { title: Mail, icon: envelope, url: 'mailto:adelrosarioh@gmail.com' }
-  - { title: Github, icon: github, url: 'https://github.com/adelrosarioh' }
-  - { title: Subscribe, icon: rss, url: '/feed.xml' }
+#  - { title: Github, icon: github, url: 'https://github.com/adelrosarioh' }
 
 plugins:
   - jekyll-feed
+  - jemoji
 # Exclude from processing.
 # The following items will not be processed, by default.
 # Any item listed under the `exclude:` key here will be automatically added to
