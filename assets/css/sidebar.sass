@@ -17,7 +17,7 @@ body > article, body > footer
 body > header
   display: block
   position: fixed
-  overflow: auto
+  overflow: hidden
   background: darken($dark, 2%)
   color: #fff
   border: none
@@ -37,13 +37,16 @@ nav
   margin: 0 -2.25em
 
 nav a
-  display: block
+  font-size: 1.25em
   margin: 0
-  padding: .5em 2.25em
+  padding: .8em 2.50em
 
 nav a:hover, nav a.selected
   background: lighten($dark, 2%)
   text-decoration: inherit
+  display: block !important
+  cursor: pointer
+  font-weight: bold
 
 article:not(:last-child)
   border-bottom-color: reduce(20)

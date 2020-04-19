@@ -5,13 +5,15 @@
             {{ page.title | escape }}
             |
         {% endif %}
-        {{ site.title | escape }}</title>
+        {{ site.title | escape }}
+    </title>
     <meta charset="{{ site.encoding }}">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta name="description" content="{{ page.excerpt | default: site.description | strip_html | normalize_whitespace | truncate: 160 | escape }}">
     <meta name="author" content="{{ page.author | default: site.author | escape }}">
     <meta content="Jekyll v{{ jekyll.version }}" name="generator">
     <link rel="canonical" href="{{ page.url | absolute_url }}">
+    <link rel="stylesheet" href="{{ "/assets/hover/hover-min.css" | relative_url }}" />
     {% if site.minimal %}
         <link rel="stylesheet" href="{{ "/assets/css/minimal.css" | relative_url }}">
     {% else %}
@@ -35,23 +37,24 @@
     {% if site.comments.isso_domain and page.layout == "post" %}
         <script data-isso="http://{{ site.comments.isso_domain }}" src="//{{ site.comments.isso_domain }}/js/embed.min.js"></script>
     {% endif %}
-
-    <header class="icons">
-        {% unless site.show_title != true and site.navigation and site.external %}
-            <a href="{{ "/" | relative_url }}" class="title">{{ site.title | escape }}</a>
-        {% endunless %}
-        {% if site.navigation or site.external %}
-            {% include menu.html menu=site.navigation icons=false %}
-            {% include menu.html menu=site.external icons=true %}
-        {% else %}
-            {% assign pages = site.pages | where_exp: "item", "item.title and item.sitemap != false" | sort: "order" %}
-            {% include menu.html menu=pages %}
-        {% endif %}
-        {% if site.sidebar and site.show_description %}
-            <div class="hidden description">{{ site.description }}</div>
-        {% endif %}
-    </header>
-
-    {{ content }}
-
+    <body>
+        <header class="icons">
+            {% unless site.show_title != true and site.navigation and site.external %}
+                <a href="{{ "/" | relative_url }}" class="title">{{ site.title | escape }}</a>
+            {% endunless %}
+            {% if site.navigation or site.external %}
+                {% include menu.html menu=site.navigation icons=false %}
+                {% include menu.html menu=site.external icons=true %}
+            {% else %}
+                {% assign pages = site.pages | where_exp: "item", "item.title and item.sitemap != false" | sort: "order" %}
+                {% include menu.html menu=pages %}
+            {% endif %}
+            {% if site.sidebar and site.show_description %}
+                <div class="hidden description">{{ site.description }}</div>
+            {% endif %}
+        </header>
+    
+        {{ content }}
+    
+    </body>
 </html>
