@@ -39,6 +39,8 @@
     {% endif %}
     <body>
         <header class="icons">
+            <div class="profile-picture">
+            </div>
             {% unless site.show_title != true and site.navigation and site.external %}
                 <a href="{{ "/" | relative_url }}" class="title">{{ site.title | escape }}</a>
             {% endunless %}
@@ -52,6 +54,9 @@
             {% if site.sidebar and site.show_description %}
                 <div class="hidden description">{{ site.description }}</div>
             {% endif %}
+            <div class="sidebar-footer">
+                
+            </div>
         </header>
     
         {{ content }}
