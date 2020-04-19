@@ -4,14 +4,14 @@
         {% include meta.html post=post preview=true %}
         {{ post.excerpt }}
         <div class="more">
-            <a href="{{ post.url | relative_url }}">read more</a>
+            <a class="hvr-rotate" href="{{ post.url | relative_url }}">Read more ...</a>
         </div>
     </article>
 {% endfor %}
 {% if paginator.total_pages > 1 %}
     <footer>
         {% if paginator.previous_page %}
-            <a href="{{ paginator.previous_page_path | relative_url }}">« newer posts</a>
+            <a href="{{ paginator.previous_page_path | relative_url }}">« Newer posts</a>
         {% else %}
             <span></span>
         {% endif %}
@@ -20,7 +20,7 @@
             of
             {{ paginator.total_pages }}</span>
         {% if paginator.next_page %}
-            <a href="{{ paginator.next_page_path | relative_url }}">older posts »</a>
+            <a href="{{ paginator.next_page_path | relative_url }}">Older posts »</a>
         {% else %}
             <span></span>
         {% endif %}
