@@ -16,3 +16,79 @@ article p
 .emoji
   margin: 0
   padding: 0
+
+@media (min-width: 1024px)
+  nav .close, .menu-opener, .menu-help-text
+    display: none
+
+@media (min-width: 375px) and (max-width: 800px)
+  body
+    > header
+      position: fixed
+      display: block
+      margin: 0 0 !important
+      padding: 5em 0
+      width: 100%
+      height: 100%
+      top: 0
+      left: 0
+      right: 0
+      bottom: 0
+      background-color: lighten($dark, 5%)
+      z-index: 2
+      cursor: pointer
+    
+    header
+      text-align: center
+
+  nav a 
+    display: inline-block
+    width: 100%
+    color: $light
+    font-size: 2.25em
+    font-weight: bold
+    text-align: center
+    padding: 0.8em 0
+    maring: 0 0
+
+  nav .close
+    font-size: 2.25em
+    color: $light
+    font-weight: bold
+    text-align: center
+    padding: 0 50%
+  
+  .menu-opener
+    display: inline-block
+    width: 100%
+    cursor: pointer
+    img
+      display: block
+      margin: 0 auto
+      height: 64px
+      width: 64px
+
+  .menu-help-text
+    display: inline-block
+    width: 100%
+    margin: 0 auto
+    text-align: center
+    color: $dark
+
+  /* Effects */
+  .overlay-scale
+    visibility: hidden
+    opacity: 0
+    -webkit-transform: scale(0.9)
+    transform: scale(0.9)
+    -webkit-transition: -webkit-transform 0.1s, opacity 0.1s, visibility 0s 0.1s
+    transition: transform 0.1s, opacity 0.1s, visibility 0s 0.1s
+
+  .overlay-scale.open 
+    visibility: visible
+    display: block
+    opacity: 1
+    -webkit-transform: scale(1)
+    transform: scale(1)
+    -webkit-transition: -webkit-transform 0.2s, opacity 0.2s
+    transition: transform 0.2s, opacity 0.2s

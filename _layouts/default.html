@@ -13,7 +13,7 @@
     <meta name="author" content="{{ page.author | default: site.author | escape }}">
     <meta content="Jekyll v{{ jekyll.version }}" name="generator">
     <link rel="canonical" href="{{ page.url | absolute_url }}">
-    <link rel="stylesheet" href="{{ "/assets/hover/hover-min.css" | relative_url }}" />
+    <link rel="stylesheet" href="{{ "/assets/hover/hover-min.css" | relative_url }}" media="screen and (min-width: 70em)" />
     {% if site.minimal %}
         <link rel="stylesheet" href="{{ "/assets/css/minimal.css" | relative_url }}">
     {% else %}
@@ -38,12 +38,12 @@
         <script data-isso="http://{{ site.comments.isso_domain }}" src="//{{ site.comments.isso_domain }}/js/embed.min.js"></script>
     {% endif %}
     <body>
-        <header class="icons">
-            <div class="profile-picture">
-            </div>
-            {% unless site.show_title != true and site.navigation and site.external %}
-                <a href="{{ "/" | relative_url }}" class="title">{{ site.title | escape }}</a>
-            {% endunless %}
+        <span class="menu-opener" onclick="toggleNav()">
+            :hamburger:
+        </span>
+        <small class="menu-help-text">(hambuger menu)</small>
+        <header id="nav" class="icons overlay-scale">
+            <div class="profile-picture"></div>
             {% if site.navigation or site.external %}
                 {% include menu.html menu=site.navigation icons=false %}
                 {% include menu.html menu=site.external icons=true %}
@@ -54,12 +54,13 @@
             {% if site.sidebar and site.show_description %}
                 <div class="hidden description">{{ site.description }}</div>
             {% endif %}
-            <div class="sidebar-footer">
-                
-            </div>
+            <div class="sidebar-footer"></div>
         </header>
-    
         {{ content }}
-    
+        <script>
+            function toggleNav() {
+                document.getElementById("nav").classList.toggle('open')
+            }
+        </script>
     </body>
 </html>
