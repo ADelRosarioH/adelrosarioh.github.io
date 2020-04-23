@@ -53,7 +53,7 @@ navigation:
   - { title: 'His thoughts', file: 'index.html' }
   - { title: 'Who is this guy?', file: 'about-him.html' }
   - { title: 'His resume', file: 'resume.html' }
-  - { title: 'Little projects', file: 'projects.html' }
+#  - { title: 'Little projects', file: 'projects.html' } # add when you there's something to show
   - { title: "What he's using", file: 'uses.html' }
   - { title: 'Get in touch!', file: 'contact-him.html' }
   
