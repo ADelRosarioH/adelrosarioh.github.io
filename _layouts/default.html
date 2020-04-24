@@ -38,7 +38,7 @@
         {% if site.comments.isso_domain and page.layout == "post" %}
             <script data-isso="http://{{ site.comments.isso_domain }}" src="//{{ site.comments.isso_domain }}/js/embed.min.js"></script>
         {% endif %}
-
+        <link rel="stylesheet" href="{{ "/assets/css/print.css" | relative_url }}">
         <script type="text/javascript">
             function toggleNav() {
                 document
@@ -49,10 +49,12 @@
         </script>
     </head>
     <body>
-        <span class="menu-opener" onclick="toggleNav()">
-            :hamburger:
-        </span>
-        <small class="menu-help-text">(hambuger menu)</small>
+        <div class="menu-indicators">
+            <span class="menu-opener" onclick="toggleNav()">
+                :hamburger:
+            </span>
+            <small class="menu-help-text">(hambuger menu)</small>
+        </div>
         <header class="icons overlay-scale" id="nav">
             <div class="profile-picture"></div>
             {% if site.navigation or site.external %}
