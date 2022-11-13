@@ -26,13 +26,12 @@ description: >- # this means to ignore newlines until "baseurl:"
   building awesome software applications for health care, government, telecommunications and banking industries. 
 
   Here I share my thoughts on Software Development, Programming, Tools and whatever else...
-url: 'http://adelrosarioh.me/'
-
+url: "http://adelrosarioh.me/"
 # Config for contrast
 permalink: /:title/
-lang: 'en'
+lang: "en"
 excerpt_separator: "\n\n\n"
-date_format: '%B %d, %Y'
+date_format: "%B %d, %Y"
 
 # Layout
 
@@ -50,21 +49,23 @@ minimal: true # use simpler style
 # Menu
 
 navigation:
-  - { title: 'His thoughts', file: 'index.html' }
-  - { title: 'Who is this guy?', file: 'about-him.html' }
-  - { title: 'His resume', file: 'resume.html' }
-#  - { title: 'Little projects', file: 'projects.html' } # add when you there's something to show
-  - { title: "What he's using", file: 'uses.html' }
-  - { title: 'Get in touch!', file: 'contact-him.html' }
-  
-  
+  - { title: "His thoughts", file: "index.html" }
+  - { title: "Who is this guy?", file: "about-him.html" }
+  - {
+      title: "His resume",
+      url: "https://mellow-cheesecake-2e6299.netlify.app/",
+    }
+  #  - { title: 'Little projects', file: 'projects.html' } # add when you there's something to show
+  - { title: "What he's using", file: "uses.html" }
+  # - { title: "Get in touch!", file: "contact-him.html" }
+
 external: # see http://fontawesome.com/icons
 #  - { title: Github, icon: github, url: 'https://github.com/adelrosarioh' }
 
 jekyll_analytics:
-  GoogleAnalytics:          # Add, if you want to track with Google Analytics
-    id: UA-164366655-1          # Required - replace with your tracking id
-    anonymizeIp: false      # Optional - Default: false - set to true for anonymized tracking
+  GoogleAnalytics: # Add, if you want to track with Google Analytics
+    id: UA-164366655-1 # Required - replace with your tracking id
+    anonymizeIp: false # Optional - Default: false - set to true for anonymized tracking
 
 plugins:
   - jekyll-feed
